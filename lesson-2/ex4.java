@@ -1,4 +1,4 @@
-public class myClass{
+public class ex4{
 
     interface Book{
         Book convertPrice(float rate);
@@ -12,15 +12,15 @@ public class myClass{
             return String.format("The book costs %f", this.price);
         }
         @Override
-        public Book convertPrice(float rate){
+        public NewBook convertPrice(float rate){
             return new NewBook(this.price * rate);
         }
     }
      public static void main(String []args){
         NewBook book = new NewBook(25);
-        //NewBook bookEuro = book.convertPrice(4);
+        NewBook bookEuro = book.convertPrice(4);
         /*error: incompatible types: Book cannot be converted to NewBook*/
         System.out.println(book.printPrice());
-        //System.out.println(bookEuro.printPrice());
+        System.out.println(bookEuro.printPrice());
      }
 }

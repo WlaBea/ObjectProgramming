@@ -1,5 +1,5 @@
 import java.time.Year;
-public class MyClass {
+public class ex3 {
     public static class Sound{
         private String soundsName;
         private int loudness;
