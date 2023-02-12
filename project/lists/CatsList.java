@@ -1,4 +1,4 @@
-package project;
+package project.lists;
 import java.io.EOFException;
 import java.io.File;  // Import the File class
 import java.io.FileInputStream;
@@ -7,14 +7,17 @@ import java.io.ObjectOutputStream;
 import java.io.FileNotFoundException;  // Import this class to handle errors
 import java.io.IOException;
 import java.util.Scanner; // Import the Scanner class to read text files
-import project.Cats;
+
+import project.mainComponents.Menu;
+import project.mainComponents.SystemOperations;
+import project.mainObjects.Cats;
 
 public class CatsList {
     public static void showList() {
         Cats inCat = new Cats();
         int count=0;
         try {
-          FileInputStream fileStream = new FileInputStream("./project/cats.txt");
+          FileInputStream fileStream = new FileInputStream("./project/files/cats.txt");
           ObjectInputStream objStream = new ObjectInputStream(fileStream);
           Object obj;
           while((obj=objStream.readObject())!=null)  {    

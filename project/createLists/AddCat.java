@@ -1,14 +1,19 @@
-package project;
+package project.createLists;
 import java.io.FileOutputStream;
 import java.io.FileWriter;   // Import the FileWriter class
 import java.io.IOException;  // Import the IOException class to handle errors
 import java.io.ObjectOutputStream;
+
+import project.lists.CatsList;
+import project.mainComponents.SystemOperations;
+import project.mainObjects.Cats;
+
 import java.io.EOFException;
 import java.io.File;  // Import the File class
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
-import java.io.FileNotFoundException;  
-import project.Cats;
+import java.io.FileNotFoundException;
+import project.createLists.AppendingObjectOutputStream;
 
 public class AddCat {
 
@@ -38,7 +43,7 @@ public class AddCat {
     public static int addID(){
         int counter=0;
         try {
-            FileInputStream fileStream = new FileInputStream("./project/cats.txt");
+            FileInputStream fileStream = new FileInputStream("project/files/cats.txt");
             ObjectInputStream objStream = new ObjectInputStream(fileStream);
             Object obj;
             while((obj=objStream.readObject())!=null)  {    
@@ -61,7 +66,7 @@ public class AddCat {
     public static void addCat(int id, String catName, int catAge, boolean isInCage){
     Cats newCat = new Cats(id,catName, catAge, isInCage);
     try {
-        FileOutputStream myWriter = new FileOutputStream("./project/cats.txt", true);
+        FileOutputStream myWriter = new FileOutputStream("project/files/cats.txt", true);
         ObjectOutputStream writer = new AppendingObjectOutputStream(myWriter);
         writer.writeObject(newCat);
         writer.close();

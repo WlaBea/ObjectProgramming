@@ -1,4 +1,4 @@
-package project;
+package project.lists;
 import java.io.EOFException;
 import java.io.File;  // Import the File class
 import java.io.FileInputStream;
@@ -7,7 +7,11 @@ import java.io.ObjectOutputStream;
 import java.io.FileNotFoundException;  // Import this class to handle errors
 import java.io.IOException;
 import java.io.FileOutputStream;
-import java.util.Scanner; 
+import java.util.Scanner;
+
+import project.mainComponents.Menu;
+import project.mainComponents.SystemOperations;
+import project.mainObjects.Task; 
 
 public class TasksList {
     public static void showList() {
@@ -16,7 +20,7 @@ public class TasksList {
         Task inTask3 = new Task();
         int maxID=1;
         try {
-          FileInputStream fileStream = new FileInputStream("./project/task.txt");
+          FileInputStream fileStream = new FileInputStream("./project/files/task.txt");
           ObjectInputStream objStream = new ObjectInputStream(fileStream);
           Object obj;   
           obj=objStream.readObject();
@@ -50,7 +54,7 @@ public class TasksList {
             if(inTask2.id==SystemOperations.enterIntKey){System.out.println(inTask2.taskDone());}
             if(inTask3.id==SystemOperations.enterIntKey){System.out.println(inTask3.taskDone());}
             try {
-                FileOutputStream myWriter = new FileOutputStream("./project/task.txt");
+                FileOutputStream myWriter = new FileOutputStream("./project/files/task.txt");
                 ObjectOutputStream writer = new ObjectOutputStream(myWriter);
                 writer.writeObject(inTask1);
                 writer.writeObject(inTask2);

@@ -1,4 +1,4 @@
-package project;
+package project.mainObjects;
 import java.io.Serializable;
 
 public class Cats implements Serializable {

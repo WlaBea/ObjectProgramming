@@ -1,4 +1,4 @@
-package project;
+package project.mainComponents;
 import java.util.Scanner;
 
 public final class SystemOperations{

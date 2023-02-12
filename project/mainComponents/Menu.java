@@ -1,5 +1,7 @@
-package project;
-import project.SystemOperations;
+package project.mainComponents;
+import project.createLists.AddCat;
+import project.lists.CatsList;
+import project.lists.TasksList;
 public class Menu {
     public static void mainList(){
         System.out.println("Wybierz z listy co chcesz zrobić:");

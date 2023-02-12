@@ -1,8 +1,11 @@
-package project;
+package project.createLists;
 import java.io.FileOutputStream;
 import java.io.FileWriter;   // Import the FileWriter class
 import java.io.IOException;  // Import the IOException class to handle errors
 import java.io.ObjectOutputStream;
+
+import project.mainObjects.Task;
+
 import java.io.EOFException;
 import java.io.File;  // Import the File class
 import java.io.FileInputStream;
@@ -16,7 +19,7 @@ public class CreateTask {
         Task newTask3 = new Task(3,"Zabawa",2,false); 
                 
         try {
-            FileOutputStream myWriter = new FileOutputStream("./project/task.txt");
+            FileOutputStream myWriter = new FileOutputStream("./project/files/task.txt");
             ObjectOutputStream writer = new ObjectOutputStream(myWriter);
             writer.writeObject(newTask1);
             writer.writeObject(newTask2);
